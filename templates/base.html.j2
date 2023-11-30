@@ -1,0 +1,44 @@
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <a href="/">whoevencares</a>
+            </h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="/">home</a>
+                </li>
+                <li>
+                    <a href="/about.html">about</a>
+                </li>
+            </ul>
+        </div>
+        <main>
+            {% block main %} {% endblock %}
+        </main>
+        <div class="footer">
+            <p>
+                <b>
+                    hisam stuff
+                    <br>
+                    CC BY-NC-SA
+                </b>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

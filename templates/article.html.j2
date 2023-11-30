@@ -1,0 +1,22 @@
+{% extends "base.html.j2" %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block main %}
+<div class="content">
+    <div class="info">
+        <h5>{{ author }}</h5>
+        <h5>{{ publishedDate }}</h5>
+    </div>
+    <div class="article-title">
+        <h1>
+            {{ title }}
+        </h1>
+    </div>
+    <div class="article">
+        <span>
+            {{ articleContent }}
+        </span>
+    </div>
+</div>
+{% endblock %}

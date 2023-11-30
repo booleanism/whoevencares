@@ -1,0 +1,23 @@
+{% extends "base.html.j2" %}
+{% block title %}
+Home
+{% endblock %}
+{% block main %}
+{% for item in items %}
+<div class="content">
+    <div class="info">
+        <h5>{{ item.author }}</h5>
+        <h5>{{ item.publishedDate }}</h5>
+    </div>
+    <div class="article-title">
+        <h1>
+            {{ item.title }}
+        </h1>
+    </div>
+    <div class="read-more">
+        <a href="{{ item.articleHref }}">Read more...</a>
+    </div>
+</div>
+<span></span>
+{% endfor %}
+{% endblock %}

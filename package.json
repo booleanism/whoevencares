@@ -1,0 +1,28 @@
+{
+  "name": "whoevencarests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf dist",
+    "dist-clean": "rm -rf dist && rm -rf node_modules",
+    "ts": "npx tsc",
+    "build": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^20.10.1",
+    "typescript": "^5.3.2",
+    "@types/nunjucks": "^3.2.6",
+    "@types/markdown-it": "^13.0.7"
+  },
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "markdown-it": "^13.0.2",
+    "nunjucks": "^3.2.4"
+  }
+}
