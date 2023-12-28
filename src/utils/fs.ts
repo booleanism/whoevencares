@@ -22,18 +22,26 @@ export namespace fs {
     }
 
     export async function readDir(dir: string, fileFormat: string): Promise<string[]> {
-        const order = 1
-        const files = await readdir(dir);
-        const stats = await Promise.all(
-        files.map((filename) =>
-            stat(join(dir, filename))
-                .then((stat) => ({ filename, mtime: stat.mtime }))
-            )
-        );
+        // const order = 1
+        // const files = await readdir(dir);
+        // const stats = await Promise.all(
+        // files.map((filename) =>
+        //     stat(join(dir, filename))
+        //         .then((stat) => ({ filename, mtime: stat.mtime }))
+        //     )
+        // );
 
-        return stats.sort((a, b) =>
-            order * (b.mtime.getTime() - a.mtime.getTime())
-        ).map((stat) => stat.filename);
+        // return stats.sort((a, b) =>
+        //     order * (b.mtime.getTime() - a.mtime.getTime())
+        // ).map((stat) => stat.filename);
+        const files = await readdir(dir)
+        let htmlFiles = []
+        for (const file of files) {
+            if (file.endsWith(fileFormat)) {
+                htmlFiles.push(file)
+            }
+        }
+        return htmlFiles;
     }
 
     export function createDir(path: string, callback?: (newPath: string | undefined | null, err: any) => void): void {

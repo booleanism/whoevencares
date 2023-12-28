@@ -45,8 +45,11 @@ async function startUp() {
 
         indexItems.push(ctx);
     }
+    // sort by date
+    indexItems.sort((a, b) => {
+        return new Date(b.publishedDate).getDate() - new Date(a.publishedDate).getDate()
+    })
 
-    // console.log(rss.buildRss(indexItems))
     fs.write(`${defaultConfig.htmlDir}/rss.xml`, rss.buildRss(indexItems))
     fs.write(`${defaultConfig.htmlDir}/index.html`, template.build(defaultConfig, indexItems, true));
 
