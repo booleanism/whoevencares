@@ -10,7 +10,8 @@ export namespace frontmatter {
         publishedDate: string,
         draft: boolean,
         articleHref?: string,
-        articleContent?: string
+        articleContent?: string,
+        htmlBody: string
     }
 
     export type FM = {
@@ -18,7 +19,7 @@ export namespace frontmatter {
         htmlBody: string
     }
 
-    export function parse(md_file: string): FM {
+    export function parse(md_file: string): attr {
         const fMatter = fm(md_file, {allowUnsafe: true});
         const attributes = fMatter.attributes as attr; 
         
@@ -27,7 +28,7 @@ export namespace frontmatter {
         }
 
         if (attributes.draft === undefined) {
-            attributes.draft = true;
+            attributes.draft = false;
         }
 
         if (!attributes.articleHref) {
@@ -35,9 +36,18 @@ export namespace frontmatter {
             // console.log(attributes.articleHref);
         }
 
-        const parsedFm: FM = {
-            attibutes: attributes,
-            htmlBody: markdown.parse(fMatter.body)
+        // const parsedFm: FM = {
+        //     attibutes: attributes,
+        //     htmlBody: markdown.parse(fMatter.body)
+        // }
+        const parsedFm: attr = {
+            author: attributes.author,
+            draft: attributes.draft,
+            htmlBody: markdown.parse(fMatter.body),
+            publishedDate: attributes.publishedDate,
+            title: attributes.title,
+            articleContent: attributes.articleContent,
+            articleHref: attributes.articleHref
         }
 
         return parsedFm;

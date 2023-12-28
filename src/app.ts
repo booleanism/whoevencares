@@ -1,7 +1,6 @@
 import { frontmatter } from "./frontmatter.js";
 import { fs } from "./utils/fs.js";
 import { config } from "./config/template.js";
-import { context } from "./context.js";
 import { template } from "./template.js";
 
 const defaultConfig: config.template.templateInfo = {
@@ -28,16 +27,14 @@ async function startUp() {
     if (mdFiles.length > 0) {
         for (const file of mdFiles) {
             const mdContent = await fs.read(`${defaultConfig.mdDir}/${file}`);
-            const fm = frontmatter.parse(mdContent);
-
-            const ctx = context.article(fm);
+            const ctx = frontmatter.parse(mdContent);
 
             if (ctx.articleHref === undefined) {
                 throw new Error('href not found');
             }
 
 
-            if (!htmlFiles.includes(ctx.articleHref) || fm.attibutes.draft) {
+            if (!htmlFiles.includes(ctx.articleHref) || ctx.draft) {
                 const data = template.build(defaultConfig, ctx, false);
                 fs.write(`${defaultConfig.htmlDir}/${ctx.articleHref}`, data);
             }
