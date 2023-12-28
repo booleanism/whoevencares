@@ -9,6 +9,7 @@
     "dist-clean": "rm -rf dist && rm -rf node_modules",
     "ts": "npx tsc",
     "debug": "npx tsc && node inspect dist/app.js",
+    "clean-public": "rm -rf public/",
     "build": "node dist/app.js"
   },
   "keywords": [],
