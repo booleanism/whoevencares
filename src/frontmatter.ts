@@ -32,7 +32,7 @@ export namespace frontmatter {
 
         if (!attributes.articleHref) {
             attributes.articleHref = generator.genHref(attributes.title).replace(' ', '-');
-            console.log(attributes.articleHref);
+            // console.log(attributes.articleHref);
         }
 
         const parsedFm: FM = {

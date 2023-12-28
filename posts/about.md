@@ -1,7 +1,7 @@
 ---
 title: About
 author: Mambaul Hisam
-draft: false
+draft: true
 ---
 
 # Intro

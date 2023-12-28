@@ -20,9 +20,15 @@ export namespace fs {
         return content
     }
 
-    export async function readDir(dir: string): Promise<string[]> {
+    export async function readDir(dir: string, fileFormat: string): Promise<string[]> {
         const files = await readdir(dir)
-        return files;
+        let htmlFiles = []
+        for (const file of files) {
+            if (file.endsWith(fileFormat)) {
+                htmlFiles.push(file)
+            }
+        }
+        return htmlFiles;
     }
 
     export function createDir(path: string, callback?: (newPath: string | undefined | null, err: any) => void): void {

@@ -8,6 +8,7 @@
     "clean": "rm -rf dist",
     "dist-clean": "rm -rf dist && rm -rf node_modules",
     "ts": "npx tsc",
+    "debug": "npx tsc && node inspect dist/app.js",
     "build": "node dist/app.js"
   },
   "keywords": [],

@@ -22,30 +22,27 @@ function init() {
 }
 
 async function startUp() {
-    const mdFiles = await fs.readDir(defaultConfig.mdDir);
-    const htmlFiles = await fs.readDir(defaultConfig.htmlDir);
+    const mdFiles = await fs.readDir(defaultConfig.mdDir, '.md');
+    const htmlFiles = await fs.readDir(defaultConfig.htmlDir, '.html');
 
     if (mdFiles.length > 0) {
         for (const file of mdFiles) {
             const mdContent = await fs.read(`${defaultConfig.mdDir}/${file}`);
             const fm = frontmatter.parse(mdContent);
 
-            const indexItem = context.article(fm);
+            const ctx = context.article(fm);
 
-            if (indexItem.articleHref === undefined) {
+            if (ctx.articleHref === undefined) {
                 throw new Error('href not found');
             }
 
 
-            if (!htmlFiles.includes(indexItem.articleHref) || !fm.attibutes.draft) {
-                const ctx = context.article(fm);
-
+            if (!htmlFiles.includes(ctx.articleHref) || fm.attibutes.draft) {
                 const data = template.build(defaultConfig, ctx, false);
-
-                fs.write(`${defaultConfig.htmlDir}/${indexItem.articleHref}`, data);
+                fs.write(`${defaultConfig.htmlDir}/${ctx.articleHref}`, data);
             }
 
-            indexItems.push(indexItem);
+            indexItems.push(ctx);
         }
 
         fs.write(`${defaultConfig.htmlDir}/index.html`, template.build(defaultConfig, indexItems, true));
