@@ -5,22 +5,16 @@
 }
 
 img {
-    max-width: 100%;
+    display: block;
+    max-width: 50%;
     height: auto;
-  }
+    margin: auto;
+}
 
 p, h1, h2, h3, h4, h5, h6, ul, ol {
     color: #382d26;
     font-family: monospace;
 }
-
-/* .content {
-    .article {
-        > h1 {
-            padding-top: 20;
-        }
-    }
-} */
 
 ul, ol {
     margin-left: 0;
