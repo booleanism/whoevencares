@@ -7,9 +7,10 @@ export namespace frontmatter {
         title: string,
         author: string,
         publishedDate: string,
+        description: string,
         draft: boolean,
-        articleHref?: string,
-        articleContent?: string,
+        articleHref: string,
+        articleContent: string,
     }
 
     export function parse(md_file: string): attr {
@@ -17,15 +18,19 @@ export namespace frontmatter {
         const attributes = fMatter.attributes as attr; 
         
         if (!attributes.publishedDate) {
-            attributes.publishedDate = new Date().toDateString();
+            throw new Error(`${attributes.title} publishedDate must be set`);
         }
 
-        if (attributes.draft === undefined) {
+        if (!attributes.description) {
+            throw new Error(`${attributes.title} description must be set`);
+        }
+
+        if (!attributes.draft) {
             attributes.draft = false;
         }
 
         if (!attributes.articleHref) {
-            attributes.articleHref = generator.genHref(attributes.title).replace(' ', '-');
+            attributes.articleHref = generator.genHref(attributes.title);
         }
 
         const parsedFm: attr = {
@@ -34,7 +39,8 @@ export namespace frontmatter {
             publishedDate: new Date(attributes.publishedDate).toDateString(),
             title: attributes.title,
             articleContent: markdown.parse(fMatter.body),
-            articleHref: attributes.articleHref
+            articleHref: attributes.articleHref,
+            description: attributes.description
         }
 
         return parsedFm;

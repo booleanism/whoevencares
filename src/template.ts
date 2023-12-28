@@ -1,7 +1,6 @@
 import { config } from "./config/template.js";
 import { frontmatter } from "./frontmatter.js";
 import njs from 'nunjucks';
-// var njs = require('nunjucks');
 
 export namespace template {
     export function build(templateInfo: config.template.templateInfo, context: frontmatter.attr | frontmatter.attr[], isIndex: boolean): string {

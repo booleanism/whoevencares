@@ -14,10 +14,14 @@ Home
             {{ item.title }}
         </h1>
     </div>
+    <div class="article-desc">
+        <p>
+            {{ item.description }}
+        </p>
+    </div>
     <div class="read-more">
         <a href="{{ item.articleHref }}">Read more...</a>
     </div>
 </div>
-<span></span>
 {% endfor %}
 {% endblock %}

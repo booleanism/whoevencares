@@ -83,6 +83,10 @@ ul, ol {
         font-size: large;
     }
 
+    > .article-desc {
+        text-align: center;
+    }
+
     > .info {
         display: flex;
         text-align: end;

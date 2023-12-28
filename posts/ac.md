@@ -2,6 +2,8 @@
 title: About ac
 author: Mambaul Hisam
 draft: true
+publishedDate: 28 December 2023
+description: About me ac
 ---
 
 # Intro

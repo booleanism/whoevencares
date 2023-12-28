@@ -2,6 +2,8 @@
 title: About suu
 author: Mambaul Hisam
 draft: true
+publishedDate: 29 December 2023
+description: About me suu
 ---
 
 # Intro

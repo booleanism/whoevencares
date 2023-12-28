@@ -3,6 +3,7 @@ title: About
 author: Mambaul Hisam
 draft: true
 publishedDate: 1 December 2023
+description: About me
 ---
 
 # Intro
