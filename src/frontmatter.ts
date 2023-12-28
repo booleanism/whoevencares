@@ -31,7 +31,7 @@ export namespace frontmatter {
         const parsedFm: attr = {
             author: attributes.author,
             draft: attributes.draft,
-            publishedDate: attributes.publishedDate,
+            publishedDate: new Date(attributes.publishedDate).toDateString(),
             title: attributes.title,
             articleContent: markdown.parse(fMatter.body),
             articleHref: attributes.articleHref
