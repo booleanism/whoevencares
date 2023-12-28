@@ -17,14 +17,16 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it-attrs": "^4.1.3",
     "@types/node": "^20.10.1",
-    "typescript": "^5.3.2",
     "@types/nunjucks": "^3.2.6",
-    "@types/markdown-it": "^13.0.7"
+    "typescript": "^5.3.2"
   },
   "dependencies": {
     "front-matter": "^4.0.2",
     "markdown-it": "^13.0.2",
+    "markdown-it-attrs": "^4.1.6",
     "nunjucks": "^3.2.4"
   }
 }
