@@ -1,0 +1,18 @@
+{
+    "htmlDir": "./public",
+    "mdDir": "./posts",
+    "template": {
+        "dir": "./templates",
+        "index": "index.html.j2",
+        "article": "article.html.j2"
+    },
+    "url": "https://whoevencares.com",
+    "blogsName": "whoevencares",
+    "copyright": "2023-2023 CC BY-NC-SA",
+    "author": {
+        "name": "Mambaul Hisam",
+        "email": "hisyamsquartz@gmail.com",
+        "link": "https://whoevencares.com/about"
+    },
+    "blogDescription": "my personal blog"
+}

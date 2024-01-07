@@ -10,7 +10,7 @@
     "ts": "npx tsc",
     "debug": "npx tsc && node inspect dist/app.js",
     "clean-public": "rm -rf public/*.html",
-    "build": "node dist/app.js"
+    "run": "npx tsc && node dist/app.js"
   },
   "keywords": [],
   "author": "",
