@@ -15,6 +15,7 @@ const indexItems: frontmatter.attr[] = [];
 })();
 
 async function main(conf:  config.config) {
+    
     const mdFiles = await fs.readDir(conf.mdDir, '.md');
     const htmlFiles = await fs.readDir(conf.htmlDir, '.html');
 
@@ -32,7 +33,7 @@ async function main(conf:  config.config) {
 
 
         if (!htmlFiles.includes(ctx.articleHref) || ctx.draft) {
-            const data = template.build(conf, ctx, false);
+            const data = template.build(conf, ctx);
             fs.write(`${conf.htmlDir}/${ctx.articleHref}`, data);
         }
 
@@ -40,7 +41,7 @@ async function main(conf:  config.config) {
     }
 
     fs.write(`${conf.htmlDir}/rss.xml`, rss.buildRss(conf, indexItems))
-    fs.write(`${conf.htmlDir}/index.html`, template.build(conf, indexItems, true));
+    fs.write(`${conf.htmlDir}/index.html`, template.build(conf, indexItems));
 
     return 0
 };

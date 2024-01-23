@@ -18,6 +18,8 @@ export namespace config {
             email: string,
             link: string
         },
+        faviconPath: string,
+        defaultArticleImagePath: string,
         blogDescription: string
     }
     export async function parse() : Promise<config> {

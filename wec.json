@@ -14,5 +14,7 @@
         "email": "hisyamsquartz@gmail.com",
         "link": "https://whoevencares.com/about"
     },
-    "blogDescription": "my personal blog"
+    "faviconPath": "./public/favicon.png",
+    "defaultArticleImagePath": "./public/default-article-image.png",
+    "blogDescription": "write what i wanted to"
 }

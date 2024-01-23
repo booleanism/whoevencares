@@ -47,4 +47,14 @@ export namespace fs {
             }
         });
     }
+
+    export function extractFileName(path: string): string | null {
+        const match = path.match(/[^\\/]*$/);
+    
+        if (match) {
+            return match[0];
+        } else {
+            return null;
+        }
+    }
 }
