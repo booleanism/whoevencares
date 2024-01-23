@@ -40,6 +40,10 @@ async function main(conf:  config.config) {
 
         indexItems.push(ctx);
     }
+    // sort by date
+    indexItems.sort((a, b) => {
+        return new Date(b.publishedDate).getDate() - new Date(a.publishedDate).getDate()
+    })
 
     sorting.date(indexItems);
     fs.write(`${conf.htmlDir}/rss.xml`, rss.buildRss(conf, indexItems))
