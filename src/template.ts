@@ -22,7 +22,7 @@ export namespace template {
         }
         templateObj = {
             title: context.title,
-            articleHref: context.articleHref,
+            articleHref: `${templateInfo.url}/${context.articleHref}`,
             description: context.description,
             author: context.author,
             publishedDate: context.publishedDate,
@@ -30,7 +30,7 @@ export namespace template {
             articleImage: `${templateInfo.url}/${fs.extractFileName(templateInfo.defaultArticleImagePath)}`,
         }
 
-        rendered = env.render(templateInfo.template.article, context);
+        rendered = env.render(templateInfo.template.article, templateObj);
         return rendered;
     }
 }
