@@ -1,17 +1,36 @@
-import { config } from "./config/template.js";
+import { config } from "./config/config.js";
 import { frontmatter } from "./frontmatter.js";
 import njs from 'nunjucks';
+import { fs } from "./utils/fs.js";
 
 export namespace template {
-    export function build(templateInfo: config.template.templateInfo, context: frontmatter.attr | frontmatter.attr[], isIndex: boolean): string {
+    export function build(templateInfo: config.config, context: frontmatter.attr | frontmatter.attr[]): string {
         const env = new njs.Environment(new njs.FileSystemLoader(templateInfo.template.dir), {autoescape: false});
 
-        if (isIndex) {
-            const rendered = env.render(templateInfo.template.index, {items: context});
+        let templateObj = null;
+        let rendered = null;
+
+        if (Array.isArray(context)) {
+            templateObj = {
+                items: context,
+                homeUrl: templateInfo.url,
+                articleImage: `${templateInfo.url}/${fs.extractFileName(templateInfo.defaultArticleImagePath)}`,
+                description: templateInfo.blogDescription,
+            }
+            rendered = env.render(templateInfo.template.index, templateObj);
             return rendered;
         }
+        templateObj = {
+            title: context.title,
+            articleHref: context.articleHref,
+            description: context.description,
+            author: context.author,
+            publishedDate: context.publishedDate,
+            articleContent: context.articleContent,
+            articleImage: `${templateInfo.url}/${fs.extractFileName(templateInfo.defaultArticleImagePath)}`,
+        }
 
-        const rendered = env.render(templateInfo.template.article, context);
+        rendered = env.render(templateInfo.template.article, context);
         return rendered;
     }
 }

@@ -6,7 +6,7 @@ export namespace frontmatter {
     export type attr = {
         title: string,
         author: string,
-        publishedDate: string,
+        publishedDate: string | Date,
         description: string,
         draft: boolean,
         articleHref: string,
