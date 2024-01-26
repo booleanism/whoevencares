@@ -1,5 +1,7 @@
 {% extends "base.html.j2" %}
 {% block ogMetaTag %}
+<meta name="title" content="Hisam's Blog">
+<meta name="description" content="{{ description }}">
 <meta property="og:title" content="Hisam's Blog">
 <meta property="og:type" content="webiste">
 <meta property="og:url" content="{{ homeUrl }}">
@@ -7,7 +9,7 @@
 <meta property="og:description" content="{{ description }}">
 {% endblock %}
 {% block title %}
-Home
+Hisam's Blog
 {% endblock %}
 {% block main %}
 {% for item in items %}

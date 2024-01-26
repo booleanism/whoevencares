@@ -28,6 +28,24 @@ ul, ol {
     background-color: #BBA89C;
 }
 
+pre {
+    margin: 20px 10px 20px 10px;
+    white-space: pre-wrap;
+    /* overflow-x: ; */
+    word-break: break-all;
+    /* background: hsl(30,80%,90%); */
+    /* background: hsl(0, 12%, 75%); */
+    border: 2px solid black;
+    border-color: #382d26 #382d26 #382d26 #382d26;
+    box-shadow: 6px 6px #4c364d;
+}
+
+code {
+    display:inline-block;
+    font-size: medium;
+    line-height: 1.5;
+}
+
 .header {
     text-align: center;
     font-size: 100%;
@@ -72,7 +90,12 @@ ul, ol {
         /* padding-top: 10px; */
         font-size: x-large;
         > span > h1 {
-        padding-top: 20px;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #382d26;
+        }
+        > span > p, li {
+            padding-top: 10px;
         }
     }
 

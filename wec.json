@@ -6,7 +6,7 @@
         "index": "index.html.j2",
         "article": "article.html.j2"
     },
-    "url": "https://whoevencares.com",
+    "url": "https://www.whoevencares.com",
     "blogsName": "whoevencares",
     "copyright": "2023-2023 CC BY-NC-SA",
     "author": {
@@ -15,6 +15,6 @@
         "link": "https://whoevencares.com/about"
     },
     "faviconPath": "./public/favicon.png",
-    "defaultArticleImagePath": "./public/default-article-image.png",
+    "defaultArticleImagePath": "./public/default-article-image.jpg",
     "blogDescription": "write what i wanted to"
 }
