@@ -1,9 +1,9 @@
 ---
-title: "Celoteh: Shall we?" 
+title: Shall we?"
 author: Mambaul Hisam
 draft: true
 publishedDate: 8 February 2024
-description: Ini bukan celotahannya Hisam.
+description: "Celoteh: Ini bukan celotahannya Hisam."
 ---
 
 You are the matter that causes all the things matter to me.\
