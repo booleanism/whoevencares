@@ -1,5 +1,5 @@
 ---
-title: Shall we?"
+title: Shall we?
 author: Mambaul Hisam
 draft: true
 publishedDate: 8 February 2024
