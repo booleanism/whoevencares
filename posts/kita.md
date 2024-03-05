@@ -3,7 +3,7 @@ title: Kita
 author: Mambaul Hisam
 draft: true
 publishedDate: 6 March 2024
-description: "Puisi Kita"
+description: "Puisi: Kita"
 ---
 
 Jika sudah kutemukan\
@@ -12,6 +12,6 @@ Kau ceritakan betapa hebatnya keluargamu\
 Kan ku ceritakan juga bergitu\
 \
 Tak hanya perasaan\
-Keluh kesahpun tak perlu ditahan\
+Keluh kesah pun tak perlu ditahan\
 Saat itu dusta sudah tidak lagi berlaku\
 Tak ada lagi istilah dirimu diriku
