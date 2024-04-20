@@ -9,7 +9,7 @@ description: "Puisi: Kita"
 Jika sudah kutemukan\
 Bertukar cerita adalah keharusan\
 Kau ceritakan betapa hebatnya keluargamu\
-Kan ku ceritakan juga bergitu\
+Kan ku ceritakan juga begitu\
 \
 Tak hanya perasaan\
 Keluh kesah pun tak perlu ditahan\
