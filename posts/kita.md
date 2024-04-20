@@ -3,7 +3,7 @@ title: Kita
 author: Mambaul Hisam
 draft: true
 publishedDate: 6 March 2024
-description: "Puisi: Kita"
+description: "Puishit: Kita"
 ---
 
 Jika sudah kutemukan\
