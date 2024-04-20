@@ -1,5 +1,5 @@
 ---
-title: Masalah Sykur
+title: Masalah Syukur
 author: Mambaul Hisam
 draft: true
 publishedDate: 20 April 2024
