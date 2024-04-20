@@ -53,8 +53,11 @@ async function main(conf:  config.config) {
     // indexItems[] 
 
     for (const i of htmlFiles) {
-        if (!isIncluded(href, i)) {
-            fs.delFile(i);
+        if (i !== "index.html") {
+            if (!isIncluded(href, i)) {
+                console.log(i);
+                await fs.delFile(`${conf.htmlDir}/${i}`);
+            }
         }
     }
 
