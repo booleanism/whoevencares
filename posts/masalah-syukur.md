@@ -11,4 +11,4 @@ Hanya bersyukur atas nikmat yang kau terima\
 Kau angkuh\
 Hanya bersyukur atas nikmat yang kau terima\
 Dan kau sombong\
-Dengan hanya bersyukur atas nikmat yang kau terima\
+Dengan hanya bersyukur atas nikmat yang kau terima
