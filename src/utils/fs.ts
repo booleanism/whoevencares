@@ -1,4 +1,4 @@
-import { open, readdir, mkdir, stat } from "fs/promises";
+import { open, readdir, mkdir, stat, unlink } from "fs/promises";
 import { join } from "path";
 
 export namespace fs {
@@ -64,5 +64,9 @@ export namespace fs {
         } else {
             return null;
         }
+    }
+
+    export async function delFile(path: string) {
+        await unlink(path);
     }
 }

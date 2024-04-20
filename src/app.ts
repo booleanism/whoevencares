@@ -24,6 +24,8 @@ async function main(conf:  config.config) {
         return 0
     } 
 
+    // for (const file of htmlFiles) {}
+
     for (const file of mdFiles) {
         const mdContent = await fs.read(`${conf.mdDir}/${file}`);
         const ctx = frontmatter.parse(mdContent);
@@ -31,7 +33,6 @@ async function main(conf:  config.config) {
         if (ctx.articleHref === undefined) {
             throw new Error('href not found');
         }
-
 
         if (!htmlFiles.includes(ctx.articleHref) || ctx.draft) {
             const data = template.build(conf, ctx);
@@ -45,9 +46,34 @@ async function main(conf:  config.config) {
         return new Date(b.publishedDate).getDate() - new Date(a.publishedDate).getDate()
     })
 
+    let href = [];
+    for (const c of indexItems) {
+        href.push(c.articleHref);
+    }
+    // indexItems[] 
+
+    for (const i of htmlFiles) {
+        if (!isIncluded(href, i)) {
+            fs.delFile(i);
+        }
+    }
+
     sorting.date(indexItems);
     fs.write(`${conf.htmlDir}/rss.xml`, rss.buildRss(conf, indexItems))
     fs.write(`${conf.htmlDir}/index.html`, template.build(conf, indexItems));
 
     return 0
 };
+
+function isIncluded(strs: string[], search: string): boolean {
+    let con = [true];
+    for (const i of strs) {
+        if (i === search) {
+            // con.push(i !== search);
+            // return con = i === search && true;
+            return true;
+        }
+    }
+
+    return false;
+}
