@@ -22,7 +22,7 @@ h1 {
 }
 
 h2 {
-    padding-top: 2vw;
+    padding-top: 1vw;
     font-size: large;
     border-bottom: 2px solid #382d26;
     width: fit-content;
@@ -63,6 +63,7 @@ code {
     text-align: center;
     font-size: 100%;
     > h1 {
+        font-size: 1.5vw;
         > a {
             color: #382d26;
         }
@@ -78,10 +79,11 @@ code {
         margin-top: 0%;
         > li {
             flex-wrap: wrap;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 0.5vw;
+            padding-right: 0.5vw;
 
             > a {
+                font-size: 0.8vw;
                 color: #7a4f42;
             }
         }
