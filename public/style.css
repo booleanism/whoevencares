@@ -16,6 +16,18 @@ p, h1, h2, h3, h4, h5, h6, ul, ol {
     font-family: monospace;
 }
 
+h1 {
+    font-size: larger;
+    /* border-bottom: 2px solid #382d26; */
+}
+
+h2 {
+    padding-top: 2vw;
+    font-size: large;
+    border-bottom: 2px solid #382d26;
+    width: fit-content;
+}
+
 ul, ol {
     margin-left: 0;
     padding-left: 20px;
@@ -44,6 +56,7 @@ code {
     display:inline-block;
     font-size: medium;
     line-height: 1.5;
+    padding: 0.5vw 0 0.4vw 1vw;
 }
 
 .header {
@@ -75,6 +88,10 @@ code {
     }
 }
 
+a {
+    color: #7a4f42;
+}
+
 .content {
     box-sizing: border-box;
     border-style: solid;
@@ -103,7 +120,9 @@ code {
         padding-top: 30px;
         text-align: center;
         padding-bottom: 10px;
-        font-size: large;
+        > h1 {
+            font-size: xx-large;
+        }
     }
 
     > .article-desc {
