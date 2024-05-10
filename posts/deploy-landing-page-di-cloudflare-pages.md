@@ -42,6 +42,10 @@ Selanjutnya membuat project pages
 ```sh
 npx wrangler pages project create landingpage
 ``` 
+Teman saya mengalami error memakai Windows saat menjalankan command diatas (terima kasih [andre](https://github.com/LordAndree) sudah melaporkan), jika kalian memakai Windows
+```sh
+npx wrangler pages project create landingpage --production-branch production
+```
 Pada tulisan 'landingpage' pada command tersebut bisa disesuaikan dengan project pages kalian. biarkan branch name secara default 'production'.\
 \
 Lalu buat folder/directory baru dengan nama public
