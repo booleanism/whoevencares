@@ -42,7 +42,7 @@ Selanjutnya membuat project pages
 ```sh
 npx wrangler pages project create landingpage
 ``` 
-Teman saya mengalami error memakai Windows saat menjalankan command diatas (terima kasih [andre](https://github.com/LordAndree) sudah melaporkan), jika kalian memakai Windows
+Teman saya mengalami error memakai Windows saat menjalankan command diatas (terima kasih [Andre](https://github.com/LordAndree) sudah melaporkan), jika kalian memakai Windows
 ```sh
 npx wrangler pages project create landingpage --production-branch production
 ```
