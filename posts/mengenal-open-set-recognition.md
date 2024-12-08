@@ -6,7 +6,7 @@ publishedDate: 8 December 2024
 description: "Pengenalan tentang Open-Set Recognition pada Machine Learning."
 ---
 Yoo halooo, bertemu lagi sama aku.\
-Btw, tulisan ini aku mau bahas tentang Open-Set Recognition atau bahasa sehari-harinya yaitu model klasifikasi yang bisa mendeteksi kelas yang tidak ada pada himpunan kelas pelatihan.\
+Btw, tulisan ini aku mau bahas tentang Open-Set Recognition atau bahasa sehari-harinya yaitu model klasifikasi yang bisa mendeteksi kelas yang tidak ada pada himpunan kelas pelatihan.
 
 # Berawal dari salah input pada model
 Pada saat itu, aku bikin pemodelan Machine Learning buat nylesein tugas salah satu mata kuliahku.
