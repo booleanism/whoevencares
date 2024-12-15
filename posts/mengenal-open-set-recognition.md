@@ -24,4 +24,25 @@ Di paper itulah dijelasin apa itu OSR dengan penjelasan yang bisa dipahami sama 
 Mulai dari awal mula penelitian di subjek ini, yang mana diawali dengan paper yang ditulis sama Walter J. Scheirer dkk. sampe benchmarking masing-masing metode.
 
 # Jadi, apa itu OSR?
+OSR itu singkatan dari Open-Set Recognition.
+Kalo disuruh jelasin kurang dari 5 detik, OSR itu pendekatan yang mampu ngenalin sampel yang gak sesuai kelasnya. 
+Ets tapi gak semudah itu ferguso, kalo ngeliat lebih dalem metode-metode yang ditemuin peneliti-peneliti itu ngereduksi open space risk.
+Apaan tuh? nanti dibahas kok soal open space risk, ditulisan selanjutnya tapi hehehee.\
+\
+Kek contoh di poin diatas, model bakal buat kelas baru nih, khusus buat peranin 'blackhole'. 
+Jadi, sampel yang masuk itu jadi ada kemungkinan baru, yaitu 'neither a or b or c or whatever training classes'.\
+\
+Balik lagi ke contoh yang di atas, model yang dibikin kan pake 2 kelas pas training, yaitu anjing sama kucing. 
+Di pemodelan yang konvensional kan cuma ada 2 kelas tuh pas testing apa pas udah dideploy. 
+Nah dengan ngimplementasiin OSR ini pas testing apa deploy itu total ada 3 kelas.
+
+# Gimana caranya?
+Caranya ada banyak ya, setiap metode itu caranya beda-beda. 
+Tapi ada dua aku tangkep dari 2 penelitian, yaitu prosesnya dilakuin di features space, sama yang dilakuin di input space (pixel, kalo dikasus klasifikasi gambar). 
+Tulisan ini aku fokusin ke features space aja yaa.
+
+Inget neural network itu punya hidden layer?
+Nah dikatain fitur karena itu udah bukan lagi sampel asli, tapi representasi dari sampel yang asli. 
+Disitulah feature itu jadi bahan buat modelin pemodelan OSR. 
+Contoh yang pake teknik ini itu OpenMax.
 
