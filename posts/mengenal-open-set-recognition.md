@@ -26,23 +26,30 @@ Mulai dari awal mula penelitian di subjek ini, yang mana diawali dengan paper ya
 # Jadi, apa itu OSR?
 OSR itu singkatan dari Open-Set Recognition.
 Kalo disuruh jelasin kurang dari 5 detik, OSR itu pendekatan yang mampu ngenalin sampel yang gak sesuai kelasnya. 
-Ets tapi gak semudah itu ferguso, kalo ngeliat lebih dalem metode-metode yang ditemuin peneliti-peneliti itu ngereduksi open space risk.
+Ets tapi gak semudah itu ferguso, kalo ngeliat lebih dalem metode-metode yang ditemuin peneliti-peneliti, pada intinya itu buat ngereduksi open space risk.
 Apaan tuh? nanti dibahas kok soal open space risk, ditulisan selanjutnya tapi hehehee.\
 \
 Kek contoh di poin diatas, model bakal buat kelas baru nih, khusus buat peranin 'blackhole'. 
 Jadi, sampel yang masuk itu jadi ada kemungkinan baru, yaitu 'neither a or b or c or whatever training classes'.\
 \
 Balik lagi ke contoh yang di atas, model yang dibikin kan pake 2 kelas pas training, yaitu anjing sama kucing. 
-Di pemodelan yang konvensional kan cuma ada 2 kelas tuh pas testing apa pas udah dideploy. 
-Nah dengan ngimplementasiin OSR ini pas testing apa deploy itu total ada 3 kelas.
+Di pemodelan yang konvensional itu tetep cuma ada 2 kelas, ga peduli itu pas testing apa pas udah dideploy. 
+Nah dengan ngimplementasiin OSR ini pas testing apa deploy itu total ada 3 kelas alias nambahin kelas baru satu. 
+Kalo model yang ngimplementasiin OSR ini performa metriknya 100%, gambar KTP yang aku masukin itu pasti masuk ke kelas yang bukan kelas kucing ataupun anjing.
 
 # Gimana caranya?
 Caranya ada banyak ya, setiap metode itu caranya beda-beda. 
 Tapi ada dua aku tangkep dari 2 penelitian, yaitu prosesnya dilakuin di features space, sama yang dilakuin di input space (pixel, kalo dikasus klasifikasi gambar). 
-Tulisan ini aku fokusin ke features space aja yaa.
+Tulisan ini aku singgung soal features space aja yaa (baca: skill issue penulis whehee).
 
 Inget neural network itu punya hidden layer?
-Nah dikatain fitur karena itu udah bukan lagi sampel asli, tapi representasi dari sampel yang asli. 
+Nah dikatain feature karena itu udah bukan lagi sampel asli, tapi representasi dari sampel yang asli di layer tertentu. 
 Disitulah feature itu jadi bahan buat modelin pemodelan OSR. 
-Contoh yang pake teknik ini itu OpenMax.
+Contoh yang pake pendekatan features space ini, itu OpenMax. 
 
+# Kesimpulan 
+Tulisan ini membahas pengenalan tentang OSR dan gimana cara kerjanya, salah satu metode yang bisa digunakan itu ya OpenMax. 
+Bagi para pembaca kalo masih penasaran atau tertarik bisa ikutin series tulisan ini di blog ini tentunya. 
+Kalo kalian ga sabar, bisa kalian baca paper-paper survey tentang OSR. 
+Oh ya, sedikit tips, kalo kalian pengen nambah pengetahuan baru dan yang bisa dipertanggung jawabkan ilmunya, kalian bisa langsung lari aja ke Google Schoolar, baca-baca aja deh paper survey.
+Udah dulu tulisan kali ini, dadaahhh.
