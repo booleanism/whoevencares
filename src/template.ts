@@ -20,6 +20,7 @@ export namespace template {
       templateObj = {
         items: context,
         homeUrl: templateInfo.url,
+        favicon: `${templateInfo.url}/${fs.extractFileName(templateInfo.faviconPath)}`,
         articleImage: `${templateInfo.url}/${fs.extractFileName(templateInfo.defaultArticleImagePath)}`,
         description: templateInfo.blogDescription,
       };
@@ -41,4 +42,3 @@ export namespace template {
     return rendered;
   }
 }
-
