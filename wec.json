@@ -1,20 +1,20 @@
 {
-    "htmlDir": "./public",
-    "mdDir": "./posts",
-    "template": {
-        "dir": "./templates",
-        "index": "index.html.j2",
-        "article": "article.html.j2"
-    },
-    "url": "https://www.whoevencares.com",
-    "blogsName": "whoevencares",
-    "copyright": "2023-2023 CC BY-NC-SA",
-    "author": {
-        "name": "Mambaul Hisam",
-        "email": "hisyamsquartz@gmail.com",
-        "link": "https://whoevencares.com/about"
-    },
-    "faviconPath": "./public/favicon.png",
-    "defaultArticleImagePath": "./public/default-article-image.jpg",
-    "blogDescription": "write what i wanted to"
+  "htmlDir": "./public",
+  "mdDir": "./posts",
+  "template": {
+    "dir": "./templates",
+    "index": "index.html.j2",
+    "article": "article.html.j2"
+  },
+  "url": "https://www.whoevencares.com",
+  "blogsName": "whoevencares",
+  "copyright": "2023-2023 CC BY-NC-SA",
+  "author": {
+    "name": "Mambaul Hisam",
+    "email": "hisyamsquartz@gmail.com",
+    "link": "https://whoevencares.com/about"
+  },
+  "faviconPath": "./public/favicon.ico",
+  "defaultArticleImagePath": "./public/default-article-image.png",
+  "blogDescription": "write what i wanted to"
 }
