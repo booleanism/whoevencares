@@ -22,7 +22,6 @@ window.addEventListener("load", (ev) => {
   let obs = createObs();
 
   for (let i = 0; i < content.children.length; i++) {
-    // console.log(content?.children[i]);
     obs.observe(content.children[i]);
   }
 
@@ -30,6 +29,7 @@ window.addEventListener("load", (ev) => {
 });
 
 function createObs() {
+  console.log(isMobile());
   return new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
@@ -45,6 +45,19 @@ function createObs() {
         }
       });
     },
-    { root: null, rootMargin: "-100px 0px -100px 0px", threshold: 1 },
+    {
+      root: null,
+      rootMargin: "-150px 0px -150px 0px",
+      threshold: isMobile() ? 0.7 : 1,
+    },
   );
+}
+
+function isMobile() {
+  var match = window.matchMedia || window.msMatchMedia;
+  if (match) {
+    var mq = match("(pointer:coarse)");
+    return mq.matches;
+  }
+  return false;
 }
