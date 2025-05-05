@@ -15,6 +15,6 @@
     "link": "https://whoevencares.com/about"
   },
   "faviconPath": "./public/favicon.ico",
-  "defaultArticleImagePath": "./public/default-article-image.png",
+  "defaultArticleImagePath": "./public/default-article-image.jpg",
   "blogDescription": "write what i wanted to"
 }
