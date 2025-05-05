@@ -21,17 +21,17 @@ h6,
 ul,
 ol {
   color: #382d26;
-  font-family: monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 h1 {
-  font-size: larger;
+  font-size: 16pt;
   /* border-bottom: 2px solid #382d26; */
 }
 
 h2 {
   padding-top: 1vw;
-  font-size: large;
+  font-size: 14pt;
   border-bottom: 2px solid #382d26;
   width: fit-content;
 }
@@ -46,7 +46,8 @@ ol {
   width: 100%;
   height: 100%;
   min-height: 100vh;
-  background-color: #e6e6e6;
+  /* background-color: #242423; */
+  background-color: black;
 }
 
 pre {
@@ -58,7 +59,9 @@ pre {
   /* background: hsl(0, 12%, 75%); */
   border: 2px solid black;
   border-color: #382d26 #382d26 #382d26 #382d26;
-  box-shadow: 6px 6px #4c364d;
+  border-radius: 5px;
+  transition: 1s;
+  /* box-shadow: 2px 2px white; */
 }
 
 code {
@@ -69,17 +72,31 @@ code {
 }
 
 .header {
+  display: flex;
+  justify-content: center;
   text-align: center;
-  font-size: 100%;
+  padding-top: 15px;
   > h1 {
-    font-size: 2.5em;
+    font-size: 30pt;
+    transition:
+      color 0.3s ease-in-out,
+      box-shadow 0.3s ease-in-out;
     > a {
       color: #382d26;
+    }
+  }
+
+  > h1:hover {
+    /* background-color: white; */
+    box-shadow: inset 300px 0 0 0 white;
+    > a {
+      color: black;
     }
   }
 }
 
 .nav {
+  padding-bottom: 25px;
   > ul {
     display: flex;
     list-style-type: none;
@@ -92,38 +109,49 @@ code {
       padding-right: 10px;
 
       > a {
-        font-size: 1.3em;
-        color: #525254;
+        font-size: 14pt;
+        color: rgba(221, 221, 221, 0.35);
+        transition: 0.3s;
+      }
+
+      > a:hover {
+        color: white;
       }
     }
   }
 }
 
 a {
-  color: #525254;
+  color: rgba(221, 221, 221, 0.35);
 }
 
 .content {
   box-sizing: border-box;
-  border-style: solid;
+  /* border-style: solid; */
   padding: 15px;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 10px 15px 10px;
   /* margin-bottom: 2%; */
-  background-color: #e6e6e6;
-  border-color: #382d26 #382d26 #382d26 #382d26;
-  box-shadow: 6px 6px #826aed;
+  background-color: black;
+  /* border-color: white; */
+  border: solid 1pt rgba(221, 221, 221, 0.35);
+  border-radius: 10px;
+  transition: 0.4s;
+  /* box-shadow: 6px 6px #826aed; */
 
   > .article {
     /* padding-top: 10px; */
-    font-size: x-large;
+    font-size: 14pt;
     > span > h1 {
       padding-top: 20px;
       padding-bottom: 5px;
       border-bottom: 2px solid #382d26;
+      transition: 1s;
     }
+
     > span > p,
     li {
       padding-top: 10px;
+      transition: 0.5s ease-in-out;
     }
   }
 
@@ -131,11 +159,17 @@ a {
     padding-top: 30px;
     padding-bottom: 10px;
     > h1 {
-      font-size: xx-large;
+      font-size: 20pt;
+      transition: 0.5s;
     }
   }
 
   > .article-desc {
+    width: 100%;
+    height: 4rem;
+    > p {
+      transition: 0.5s;
+    }
   }
 
   > .info {
@@ -143,12 +177,16 @@ a {
     text-align: end;
     justify-content: space-between;
     font-size: larger;
+    > h5 {
+      transition: 0.5s;
+    }
   }
 
   > .read-more {
     text-align: end;
     > a {
-      color: #525254;
+      transition: 0.5s;
+      color: rgba(221, 221, 221, 0.35);
     }
   }
 }
@@ -157,42 +195,88 @@ a {
   text-align: center;
   font-size: 90%;
   > p {
-    padding-top: 10px;
+    padding-top: 50px;
+    color: #382d26;
+    transition: 0.3s;
+  }
+
+  > p:hover {
+    color: white;
   }
 }
 
 @media screen and (min-width: 35.5em) {
   .content {
     padding: 30px;
-    margin: 10px 10% 3% 10%;
+    margin: 10px 10% 2.5% 10%;
     font-size: 110%;
-    box-shadow: 8px 8px #826aed;
+    /* box-shadow: 8px 8px #826aed; */
+  }
+  .content:hover {
+    box-shadow: 3px 3px white;
   }
 }
 
 @media screen and (min-width: 48em) {
   .content {
     padding: 50px;
-    margin: 10px 15% 2.5% 15%;
+    margin: 10px 15% 2% 15%;
     font-size: 125%;
-    box-shadow: 10px 10px #826aed;
+    /* box-shadow: 10px 10px #826aed; */
+  }
+  .content:hover {
+    box-shadow: 3px 3px white;
   }
 }
 
 @media screen and (min-width: 64em) {
   .content {
     padding: 50px;
-    margin: 10px 19% 2% 19%;
+    margin: 10px 19% 1.5% 19%;
     font-size: 140%;
-    box-shadow: 13px 13px #826aed;
+    /* box-shadow: 13px 13px #826aed; */
+  }
+  .content:hover {
+    box-shadow: 3px 3px white;
   }
 }
 
 @media screen and (min-width: 80em) {
   .content {
     padding: 50px;
-    margin: 10px 23% 2% 23%;
+    margin: 10px 23% 1% 23%;
     font-size: 120%;
-    box-shadow: 15px 15px #826aed;
+  }
+
+  .content:hover {
+    box-shadow: 3px 3px white;
+  }
+}
+
+.content:hover {
+  box-shadow: 3px 3px white;
+}
+
+.content:hover .article-title {
+  > h1 {
+    color: white;
+  }
+}
+
+.content:hover .read-more {
+  > a {
+    color: white;
+  }
+}
+
+.content:hover .article-desc {
+  > p {
+    color: white;
+  }
+}
+
+.content:hover .info {
+  > h5 {
+    color: white;
   }
 }
