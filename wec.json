@@ -9,7 +9,7 @@
   "staticDir": "./static",
   "contentDir": "./content",
   "outDir": "./public",
-  "siteUrl": "www.whoevencares.com",
+  "siteUrl": "localhost:8787",
   "siteName": "Hisam's Blog - Write what I wanted to",
   "siteImage": "index.jpg",
   "siteAuthor": {
@@ -22,5 +22,5 @@
   "copyright": "2025",
   "enableRobotTxt": true,
   "enableRss": true,
-  "secure": true
+  "secure": false
 }
