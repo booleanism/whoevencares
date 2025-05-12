@@ -1,20 +1,26 @@
 {
-  "htmlDir": "./public",
-  "mdDir": "./posts",
-  "template": {
-    "dir": "./templates",
+  "templateDir": "./templates",
+  "templates": {
+    "base": "base.html.j2",
     "index": "index.html.j2",
-    "article": "article.html.j2"
+    "content": "content.html.j2"
   },
-  "url": "https://www.whoevencares.com",
-  "blogsName": "whoevencares",
-  "copyright": "2023-2023 CC BY-NC-SA",
-  "author": {
+  "assetDir": "./assets",
+  "staticDir": "./static",
+  "contentDir": "./content",
+  "outDir": "./public",
+  "siteUrl": "www.whoevencares.com",
+  "siteName": "Hisam's Blog - Write what I wanted to",
+  "siteImage": "index.jpg",
+  "siteAuthor": {
     "name": "Mambaul Hisam",
-    "email": "hisyamsquartz@gmail.com",
-    "link": "https://whoevencares.com/about"
+    "email": "me@whoevencares.com",
+    "link": "www.whoevencares.com"
   },
-  "faviconPath": "./public/favicon.ico",
-  "defaultArticleImagePath": "./public/default-article-image.jpg",
-  "blogDescription": "write what i wanted to"
+  "ilustTemplate": "ilust-template.jpg",
+  "siteDescription": "Sama halnya kegunaan dari blog-blog lain, di blog ini saya akan mencoba belajar menulis apa yang saya pelajari, yang saya pahami, yang saya resahkan tentang apapun termasuk bidang software development.",
+  "copyright": "2025",
+  "enableRobotTxt": true,
+  "enableRss": true,
+  "secure": true
 }

@@ -1,0 +1,11 @@
+{
+  "name": "wec",
+  "compatibility_date": "2025-05-07",
+  "assets": {
+    "directory": "./public/"
+  },
+  "build": {
+    "command": "npm run dev",
+    "cwd": "./"
+  }
+}

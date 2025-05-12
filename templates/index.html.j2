@@ -1,35 +1,39 @@
 {% extends "base.html.j2" %}
 {% block ogMetaTag %}
-<meta name="title" content="Hisam's Blog">
-<meta name="description" content="{{ description }}">
-<meta property="og:title" content="Hisam's Blog">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="title" content="{{ siteName }}">
+<meta name="description" content="{{ siteDescription }}">
+<meta property="og:title" content="{{ siteName }}">
+<meta property="og:site_name" content="{{ siteName }}">
 <meta property="og:type" content="webiste">
-<meta property="og:url" content="{{ homeUrl }}">
-<meta property="og:image" content="{{ articleImage }}">
-<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ siteUrl }}">
+<meta property="og:image" content="{{ siteImage }}">
+<meta property="og:description" content="{{ siteDescription }}">
+<meta property="og:image:alt" content="{{ siteName }}">
+<meta name="twitter:card" content="summary">
 {% endblock %}
 {% block title %}
-Hisam's Blog
+{{ siteName }}
 {% endblock %}
 {% block main %}
-{% for item in items %}
+{% for content in contents %}
 <div class="content">
     <div class="info">
-        <h5>{{ item.author }}</h5>
-        <h5>{{ item.publishedDate }}</h5>
+        <h5>{{ content.author }}</h5>
+        <h5>{{ content.publishedDate | string | truncate(15, true, "") }}</h5>
     </div>
     <div class="article-title">
         <h1>
-            {{ item.title }}
+            {{ content.title }}
         </h1>
     </div>
     <div class="article-desc">
         <p>
-            {{ item.description }}
+            {{ content.description }}
         </p>
     </div>
     <div class="read-more">
-        <a href="{{ item.articleHref }}">Read more...</a>
+        <a href="{{ content.url }}">Read more...</a>
     </div>
 </div>
 {% endfor %}

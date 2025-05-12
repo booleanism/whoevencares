@@ -1,33 +1,29 @@
 {
-  "name": "whoevencarests",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "whoevencares",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rm -rf dist",
-    "dist-clean": "rm -rf dist && rm -rf node_modules",
-    "ts": "npx tsc",
-    "debug": "npx tsc && node inspect dist/app.js",
-    "clean-public": "rm -rf public/*.html",
-    "run": "npx tsc && node dist/app.js"
+    "dev": "npx tsc && FONTCONFIG_PATH=fonts node dist/app.js",
+    "debug": "npx tsc && node --inspect-brk dist/app.js",
+    "lint": "eslint src/**/*.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
+    "@eslint/js": "^9.26.0",
     "@types/markdown-it": "^13.0.7",
     "@types/markdown-it-attrs": "^4.1.3",
     "@types/node": "^20.10.1",
     "@types/nunjucks": "^3.2.6",
-    "typescript": "^5.3.2"
+    "eslint": "^9.26.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.32.1",
+    "wrangler": "^4.14.4"
   },
   "dependencies": {
-    "feed": "^4.2.2",
-    "front-matter": "^4.0.2",
+    "feed": "^5.0.0",
+    "front-matter": "github:neurolag/front-matter",
     "markdown-it": "^13.0.2",
-    "markdown-it-attrs": "^4.1.6",
-    "nunjucks": "^3.2.4"
+    "markdown-it-attrs": "^4.3.1",
+    "nunjucks": "^3.2.4",
+    "sharp": "^0.34.1"
   }
 }
