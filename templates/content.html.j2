@@ -4,10 +4,10 @@
 <meta name="title" content="{{ title }}">
 <meta name="description" content="{{ description }}">
 <meta property="og:title" content="{{ title }}">
-<meta property="og:site_name" content="{{ siteName }}">
+<meta property="og:site_name" content="{{ title }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ url }}">
-<meta property="og:image" content="{{ ilust }}">
+<meta property="og:image" content="{{ thumbnail }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:image:alt" content="{{ title }}">
 <meta name="twitter:card" content="summary">
@@ -20,6 +20,13 @@
     <div class="info">
         <h5>{{ author }}</h5>
         <h5>{{ publishedDate | string | truncate(15, true, "") }}</h5>
+    </div>
+    <div class="article-tag-container">
+    {% for tag in tags %}
+      <div class="article-tag">
+        <a href="http://localhost:8787/tags/{{ tag }}">#{{ tag }}</a>
+      </div>
+    {% endfor %}
     </div>
     <div class="article-title">
         <h1>

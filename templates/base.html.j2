@@ -11,7 +11,7 @@
     <title>
         {% block title %}{% endblock %}
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ host }}/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP9NF6DGBJ"></script>
     <script>
@@ -20,26 +20,27 @@
       gtag('js', new Date());
 
       gtag('config', 'G-VP9NF6DGBJ');
-    </script>   <link rel="shortcut icon" href="{{ favicon }}" type="image/x-icon">
-    <script async src="script.js"></script>
+    </script>
+    <link rel="shortcut icon" href="{{ host }}/favicon.ico" type="image/x-icon">
+    <script async src="{{ host }}/script.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>
-                <a href="/">whoevencares</a>
+                <a href="{{ host }}/">whoevencares</a>
             </h1>
         </div>
         <div class="nav">
             <ul>
                 <li>
-                    <a href="/">home</a>
+                    <a href="{{ host }}/">home</a>
                 </li>
                 <li>
-                    <a href="/about.html">about</a>
+                    <a href="{{ host }}/posts/about/">about</a>
                 </li>
                 <li>
-                    <a href="/rss.xml">rss</a>
+                    <a href="{{ host }}/rss.xml">rss</a>
                 </li>
             </ul>
             <ul>

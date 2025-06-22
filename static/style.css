@@ -133,7 +133,7 @@ a {
   /* margin-bottom: 2%; */
   background-color: black;
   /* border-color: white; */
-  border: solid 1pt rgba(221, 221, 221, 0.35);
+  border: solid 2pt rgba(221, 221, 221, 0.35);
   border-radius: 10px;
   transition: 0.4s;
   /* box-shadow: 6px 6px #826aed; */
@@ -156,7 +156,7 @@ a {
   }
 
   > .article-title {
-    padding-top: 30px;
+    padding-top: 15px;
     padding-bottom: 10px;
     > h1 {
       font-size: 20pt;
@@ -165,10 +165,35 @@ a {
   }
 
   > .article-desc {
+    display: block;
     width: 100%;
-    height: 4rem;
+    height: 2.5rem;
     > p {
       transition: 0.5s;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+
+  > .article-tag-container {
+    display: flex;
+
+    > .article-tag {
+      min-width: 70px;
+      box-sizing: border-box;
+      border: solid 2pt #382d26;
+      border-radius: 10px;
+      padding: 5px 10px 5px 10px;
+      margin-right: 10px;
+      font-size: medium;
+      text-align: center;
+      transition: 0.5s;
+
+      > a {
+        transition: 0.6s;
+        color: #382d26;
+      }
     }
   }
 
@@ -177,10 +202,16 @@ a {
     text-align: end;
     justify-content: space-between;
     font-size: larger;
+    padding-bottom: 15px;
+    > h5 {
+      transition: 0.5s;
+      color: rgba(221, 221, 221, 0.35);
+    }
   }
 
   > .read-more {
     text-align: end;
+    padding-bottom: 0.5rem;
     > a {
       transition: 0.5s;
       color: rgba(221, 221, 221, 0.35);
@@ -192,9 +223,10 @@ a {
   text-align: center;
   font-size: 90%;
   > p {
-    padding-top: 50px;
+    padding-top: 30px;
     color: #382d26;
     transition: 0.3s;
+    padding-bottom: 40px;
   }
 
   > p:hover {
@@ -250,8 +282,14 @@ a {
   }
 }
 
+.content:hover .info {
+  > h5 {
+    color: white;
+  }
+}
+
 .content:hover {
-  box-shadow: 3px 3px white;
+  box-shadow: 4px 4px white;
 }
 
 .content:hover .article-title {
@@ -271,3 +309,11 @@ a {
     color: white;
   }
 }
+
+.content:hover .article-tag {
+  box-shadow: 2px 2px white;
+  > a {
+    color: white;
+  }
+}
+

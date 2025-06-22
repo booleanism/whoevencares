@@ -1,13 +1,60 @@
-import { Config_t } from "../types/config.js";
-import { PathLike, readFileSync } from "fs";
+import { readFile } from "fs/promises";
 
-export class Config<T extends Config_t> {
-  path: PathLike;
-  constructor(path: PathLike) {
-    this.path = path;
-  }
+interface TemplateConfig {
+  content: string;
+  thumbnail: string;
+}
 
-  async parse(): Promise<T> {
-    return JSON.parse(readFileSync(this.path, { encoding: "utf-8" })) as T;
-  }
+interface IndexingConfig {
+  url: string;
+  name: string;
+  description: string;
+  copyright: number;
+  thumbnail: string;
+  rss: boolean;
+  robots: boolean;
+}
+
+interface AuthorConfig {
+  name: string;
+  email: string;
+  link: string;
+}
+
+export interface Configable<T extends Configuration> {
+  getConfig(): Promise<T>;
+}
+
+export interface Configuration extends Configable<Configuration> {
+  https: boolean;
+  template: TemplateConfig;
+  contentDir: string;
+  outDir: string;
+  assetsDir: string;
+  staticDir: string;
+  indexing: IndexingConfig;
+  author: AuthorConfig;
+}
+
+const configPath = "wec.json";
+
+export async function parseConfig(): Promise<Configuration> {
+  const conFile = readFile(configPath, { encoding: "utf-8" });
+  const c = JSON.parse(await conFile) as Configuration;
+  const conf = {
+    ...c,
+    indexing: {
+      ...c.indexing,
+      url: `${urlScheme(c)}${c.indexing.url}`,
+    },
+  };
+
+  return {
+    ...conf,
+    getConfig: async () => conf,
+  };
+}
+
+function urlScheme(conf: Configuration): string {
+  return conf.https ? "https://" : "http://";
 }

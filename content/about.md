@@ -4,6 +4,8 @@ author: Mambaul Hisam
 draft: false
 publishedDate: 1 December 2023
 description: About me
+tags:
+- personal
 ---
 
 # Intro

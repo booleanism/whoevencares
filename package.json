@@ -1,29 +1,39 @@
 {
-  "name": "whoevencares",
-  "type": "module",
+  "name": "wec",
+  "version": "0.0.0",
   "scripts": {
-    "dev": "npx tsc && FONTCONFIG_PATH=fonts node dist/app.js",
-    "debug": "npx tsc && node --inspect-brk dist/app.js",
-    "lint": "eslint src/**/*.ts"
+    "dev": "tsc && FONTCONFIG_PATH=fonts node dist/app.js",
+    "debug": "tsc && node --inspect-brk dist/app.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write ."
   },
+  "author": "",
+  "license": "MIT",
+  "description": "",
   "devDependencies": {
-    "@eslint/js": "^9.26.0",
+    "@eslint/js": "^9.29.0",
     "@types/markdown-it": "^13.0.7",
     "@types/markdown-it-attrs": "^4.1.3",
-    "@types/node": "^20.10.1",
+    "@types/node": "^24.0.1",
     "@types/nunjucks": "^3.2.6",
-    "eslint": "^9.26.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "eslint": "^9.29.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.0",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.32.1",
-    "wrangler": "^4.14.4"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "wrangler": "^4.20.5"
   },
   "dependencies": {
-    "feed": "^5.0.0",
+    "feed": "^5.1.0",
     "front-matter": "github:neurolag/front-matter",
     "markdown-it": "^13.0.2",
     "markdown-it-attrs": "^4.3.1",
     "nunjucks": "^3.2.4",
-    "sharp": "^0.34.1"
+    "sharp": "^0.34.2"
   }
 }

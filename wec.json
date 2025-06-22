@@ -1,26 +1,23 @@
 {
-  "templateDir": "./templates",
-  "templates": {
-    "base": "base.html.j2",
-    "index": "index.html.j2",
-    "content": "content.html.j2"
+  "outDir": "public/",
+  "assetsDir": "assets/",
+  "staticDir": "static/",
+  "template": {
+    "content": "templates/",
+    "thumbnail": "templates/thumbnail.jpg"
   },
-  "assetDir": "./assets",
-  "staticDir": "./static",
-  "contentDir": "./content",
-  "outDir": "./public",
-  "siteUrl": "localhost:8787",
-  "siteName": "Hisam's Blog - Write what I wanted to",
-  "siteImage": "index.jpg",
-  "siteAuthor": {
+  "author": {
     "name": "Mambaul Hisam",
-    "email": "me@whoevencares.com",
-    "link": "www.whoevencares.com"
+    "email": "hisyamsquartz@gmail.com",
+    "link": "whoevencares.com"
   },
-  "ilustTemplate": "ilust-template.jpg",
-  "siteDescription": "Sama halnya kegunaan dari blog-blog lain, di blog ini saya akan mencoba belajar menulis apa yang saya pelajari, yang saya pahami, yang saya resahkan tentang apapun termasuk bidang software development.",
-  "copyright": "2025",
-  "enableRobotTxt": true,
-  "enableRss": true,
-  "secure": false
+  "contentDir": "content/",
+  "indexing": {
+    "url": "localhost:8787",
+    "name": "Hisam's Blog - Write what i wanted to",
+    "description": "Sama halnya kegunaan dari blog-blog lain, di blog ini saya akan mencoba belajar menulis apa yang saya pelajari, yang saya pahami, yang saya resahkan tentang apapun termasuk bidang software development.",
+    "copyright": 2025,
+    "rss": true,
+    "robots": true
+  }
 }

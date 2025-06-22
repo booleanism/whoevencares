@@ -1,19 +1,19 @@
 {% extends "base.html.j2" %}
 {% block ogMetaTag %}
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="title" content="{{ siteName }}">
-<meta name="description" content="{{ siteDescription }}">
-<meta property="og:title" content="{{ siteName }}">
-<meta property="og:site_name" content="{{ siteName }}">
+<meta name="title" content="{{ title }}">
+<meta name="description" content="{{ description }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:site_name" content="{{ title }}">
 <meta property="og:type" content="webiste">
-<meta property="og:url" content="{{ siteUrl }}">
-<meta property="og:image" content="{{ siteImage }}">
-<meta property="og:description" content="{{ siteDescription }}">
-<meta property="og:image:alt" content="{{ siteName }}">
+<meta property="og:url" content="{{ url }}">
+<meta property="og:image" content="{{ thumbnail }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:image:alt" content="{{ title }}">
 <meta name="twitter:card" content="summary">
 {% endblock %}
 {% block title %}
-{{ siteName }}
+{{ title }}
 {% endblock %}
 {% block main %}
 {% for content in contents %}
@@ -33,7 +33,14 @@
         </p>
     </div>
     <div class="read-more">
-        <a href="{{ content.url }}">Read more...</a>
+        <a href="{{ content.url }}">Read it for {{ content.rpm }} minutes...</a>
+    </div>
+    <div class="article-tag-container">
+    {% for tag in content.tags %}
+      <div class="article-tag">
+        <a href="{{ host }}/{{ tagPath }}{{ tag }}/">#{{ tag }}</a>
+      </div>
+    {% endfor %}
     </div>
 </div>
 {% endfor %}

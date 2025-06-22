@@ -48,9 +48,9 @@ function createObs() {
     {
       root: null,
       rootMargin: isMobile()
-        ? "-200px 0px -200px 0px"
-        : "-150px 0px -150px 0px",
-      threshold: isMobile() ? 0.5 : 1,
+        ? "-150px 0px -150px 0px"
+        : "-250px 0px -150px 0px",
+      threshold: isMobile() ? 0.7 : 1,
     },
   );
 }
