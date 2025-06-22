@@ -25,8 +25,11 @@ async function setup(): Promise<Prior> {
   const template = await newTemplate(conf);
   try {
     await rm((await conf.getConfig()).outDir, { recursive: true });
-  } catch {
-    lastStep(await conf.getConfig());
+  } catch (e) {
+    type err = { code: string }
+    if ((e as err).code !== "ENOENT") {
+      throw e
+    }
   }
 
   return {
