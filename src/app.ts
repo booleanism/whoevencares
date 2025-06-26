@@ -5,7 +5,7 @@ import { newTemplate } from "./template";
 import { Environment } from "nunjucks";
 import { newContent } from "./render/content";
 import { newIndex, newIndexContextWithRss } from "./render/indexing";
-import { NewTaggingContext } from "./render/tagging";
+import { newTaggingContext } from "./render/tagging";
 
 type AppConfig<T extends Configuration> = Configable<T>;
 
@@ -26,9 +26,9 @@ async function setup(): Promise<Prior> {
   try {
     await rm((await conf.getConfig()).outDir, { recursive: true });
   } catch (e) {
-    type err = { code: string }
+    type err = { code: string };
     if ((e as err).code !== "ENOENT") {
-      throw e
+      throw e;
     }
   }
 
@@ -60,7 +60,7 @@ async function main<T extends Configuration>(
       index.render([indexContext]);
     });
 
-    const tagsContext = await NewTaggingContext(conf, indexContext);
+    const tagsContext = await newTaggingContext(conf, indexContext);
     newIndex(conf, template).then((indexTag) => {
       indexTag.render(tagsContext);
     });

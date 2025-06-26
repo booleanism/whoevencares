@@ -7,7 +7,7 @@ export const TAGS_DIR = "tags/";
 
 type TaggingContext<T extends Markdown> = Indexing<T>;
 
-export async function NewTaggingContext<T extends Markdown>(
+export async function newTaggingContext<T extends Markdown>(
   config: Configable<Configuration>,
   indexingCtx: Indexing<T>,
 ): Promise<TaggingContext<T>[]> {
