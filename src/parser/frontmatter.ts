@@ -12,6 +12,10 @@ export async function parseMarkdown<T extends Markdown>(
   f.attributes.tags = f.attributes.tags.map((val) => val.toLowerCase());
   f.attributes.writeUp = toHtml(f.body);
 
+  if (!f.attributes.publishedDate) {
+    f.attributes.publishedDate = new Date();
+  }
+
   if (typeof f.attributes.publishedDate == "string") {
     f.attributes.publishedDate = new Date(f.attributes.publishedDate);
   }
