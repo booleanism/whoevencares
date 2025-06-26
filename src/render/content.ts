@@ -44,6 +44,10 @@ export async function newContent<T extends Markdown>(
     const mdData = await readFile(mdFile, "utf-8");
     const parsed = await (await parseMarkdown<T>(mdData)).getContext();
 
+    if (parsed.draft) {
+      continue;
+    }
+
     const contentDir = `${genUrl(parsed.title)}`;
     const htmlContentPath = await new Path(conf.outDir)
       .join(CONTENT_HTML_OUT_DIR)
@@ -51,10 +55,6 @@ export async function newContent<T extends Markdown>(
     await new Path(htmlContentPath).join(contentDir).create(PathType.Dir);
     parsed.url = `${conf.indexing.url}/${CONTENT_HTML_OUT_DIR}${contentDir}/`;
     parsed.path = `${htmlContentPath}${contentDir}/`;
-
-    if (parsed.draft) {
-      continue;
-    }
 
     metas.push(parsed);
   }
